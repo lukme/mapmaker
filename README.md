@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/media/mapmaker.png" width="350" title="hover text">
+  <img src="https://mapmaker-portfolio.netlify.com/media/maplogo.png" width="350">
 </p>
 
 > This is a copy of MapMaker.online site made for portfolio purposes only.
