@@ -574,6 +574,8 @@
   left: 6%;
   height: 50px;
   width: auto;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .nav-container .nav ul {
@@ -1352,6 +1354,8 @@ input[type="submit"] {
   left: 6%;
   height: 50px;
   width: auto;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .nav-container .nav ul {
