@@ -1,4 +1,7 @@
-# MapMaker
+<p align="center">
+  <img src="/media/mapmaker.png" width="350" title="hover text">
+</p>
+
 > This is a copy of MapMaker.online site made for portfolio purposes only.
 
 ## About project
