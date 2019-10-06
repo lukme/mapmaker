@@ -1,6 +1,6 @@
 let li = document.querySelectorAll('.left-container li');
-const rightCont = document.querySelector('.right-container');
-const rightContX = document.querySelector('.right-container i');
+const rightCont = document.querySelector('.right-container'),
+  rightContX = document.querySelector('.right-container i');
 
 for (let i = 0; i < li.length; i++) {
   li[i].addEventListener('click', function () {
@@ -24,9 +24,6 @@ for (let i = 0; i < li.length; i++) {
 rightContX.addEventListener('click', () => {
   // Close right cont
   rightCont.className = 'right-container hiddenRight';
-  // Remove active li
-
-  // End remove active li
   for (var k = 0; k < li.length; k++) {
     li[k].classList.remove('li-active');
   }

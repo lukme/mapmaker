@@ -1,12 +1,12 @@
 let currentDate = 0;
-const addProjectBtn = document.querySelector('.add-project');
-const projects = document.querySelector('.projects');
-const addProjectModal = document.querySelector('.add-project-modal-bg');
-const addProjectModalClose = document.querySelector('.add-project-modal i');
-const addProjectModalInput = document.querySelector('.add-project-modal .title');
-const addProjectModalSubmit = document.querySelector('.add-project-modal .submit-add');
-const loaderAddProject = document.querySelector('.add-project-modal .loader');
-const loaderDeleteProject = document.querySelector('.delete-project-modal .loader');
+const addProjectBtn = document.querySelector('.add-project'),
+  projects = document.querySelector('.projects'),
+  addProjectModal = document.querySelector('.add-project-modal-bg'),
+  addProjectModalClose = document.querySelector('.add-project-modal i'),
+  addProjectModalInput = document.querySelector('.add-project-modal .title'),
+  addProjectModalSubmit = document.querySelector('.add-project-modal .submit-add'),
+  loaderAddProject = document.querySelector('.add-project-modal .loader'),
+  loaderDeleteProject = document.querySelector('.delete-project-modal .loader');
 
 window.addEventListener('load', function () {
   addProjectModalInput.disabled = true;
@@ -15,9 +15,9 @@ window.addEventListener('load', function () {
 
 // Slide items horizontal
 const slideTarget = document.querySelector('.projects');
-let isDown = false;
-let startX;
-let scrollLeft;
+let isDown = false,
+  startX,
+  scrollLeft;
 
 slideTarget.addEventListener('mousedown', (e) => {
   isDown = true;
@@ -39,7 +39,7 @@ slideTarget.addEventListener('mousemove', (e) => {
 });
 
 // Add Project Modal
-addProCount = 0;
+let addProCount = 0;
 addProjectBtn.addEventListener('click', function () {
   addProjectModalInput.disabled = false;
   addProjectModalSubmit.disabled = false;
@@ -69,15 +69,15 @@ function addProject() {
     if (!projects.children[0].classList.contains('project')) {
       addProjectBtn.style.cssText = "margin-top: 0; margin-bottom: 80px;";
     }
-    const project = document.createElement('div');
-    const image = document.createElement('div');
-    const head = document.createElement('h3');
-    const dateStr = document.createElement('p');
-    const timeStr = document.createElement('p');
-    const menage = document.createElement('div');
-    const editBtn = document.createElement('button');
-    const publishBtn = document.createElement('button');
-    const deleteBtn = document.createElement('button');
+    const project = document.createElement('div'),
+      image = document.createElement('div'),
+      head = document.createElement('h3'),
+      dateStr = document.createElement('p'),
+      timeStr = document.createElement('p'),
+      menage = document.createElement('div'),
+      editBtn = document.createElement('button'),
+      publishBtn = document.createElement('button'),
+      deleteBtn = document.createElement('button');
     project.classList.add('project');
     image.classList.add('image');
     menage.classList.add('menage');
@@ -105,7 +105,7 @@ function addProject() {
     projects.insertBefore(project, projects.childNodes[0]);
     document.querySelector('.add-project-modal .title').value = "";
     addProjectModal.className = 'add-project-modal-bg hidden';
-    addProCount++
+    addProCount++;
     addProjectModalInput.disabled = true;
     addProjectModalSubmit.disabled = true;
     document.querySelector('.menage').childNodes[2].addEventListener('click', initDelete);
@@ -130,11 +130,11 @@ document.addEventListener('keydown', function (e) {
 
 // Get date
 function appointDate() {
-  const wholeDate = new Date();
-  const day = wholeDate.getUTCDate();
-  const month = wholeDate.getMonth() + 1;
-  const year = wholeDate.getFullYear();
-  const dateArr = [day, month, year];
+  const wholeDate = new Date(),
+    day = wholeDate.getUTCDate(),
+    month = wholeDate.getMonth() + 1,
+    year = wholeDate.getFullYear(),
+    dateArr = [day, month, year];
   if (day < 10 || month < 10) {
     for (let i = 0; i < dateArr.length; i++) {
       if (dateArr[i] < 10) {
@@ -151,7 +151,7 @@ function appointDate() {
 
 // Add listeners to "DELETE" buttons in GOTten projects
 window.addEventListener('load', () => {
-  let deleteButtons = document.querySelectorAll('.project .remove');
+  const deleteButtons = document.querySelectorAll('.project .remove');
   for (let i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].addEventListener('click', initDelete);
   };
@@ -171,7 +171,7 @@ function initDelete() {
     }
   }
 
-  let parent = this.parentElement.parentElement;
+  const parent = this.parentElement.parentElement;
   document.querySelector('.delete-project-modal .submit-add').addEventListener('click', function () {
     if (parent) {
       parent.remove();

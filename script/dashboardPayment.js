@@ -1,11 +1,11 @@
-const paymentMethodModal = document.querySelector('.paymentMethodModal');
-const paymentMethodModalClose = document.querySelector('.paymentMethodModal i');
-const packageChooseModal = document.querySelector('.packageChooseModal');
-const packageChooseModalClose = document.querySelector('.packageChooseModal i');
-const extendPackage = document.querySelector('.extendPackage .packageBtn');
-const changePackage = document.querySelector('.changePackage .packageBtn');
-const paymentMethodEl = document.querySelectorAll('.paymentMethod div');
-const paymentMethodLi = [paymentMethodEl[1], paymentMethodEl[2], paymentMethodEl[3]]
+const paymentMethodModal = document.querySelector('.paymentMethodModal'),
+  paymentMethodModalClose = document.querySelector('.paymentMethodModal i'),
+  packageChooseModal = document.querySelector('.packageChooseModal'),
+  packageChooseModalClose = document.querySelector('.packageChooseModal i'),
+  extendPackage = document.querySelector('.extendPackage .packageBtn'),
+  changePackage = document.querySelector('.changePackage .packageBtn'),
+  paymentMethodEl = document.querySelectorAll('.paymentMethod div'),
+  paymentMethodLi = [paymentMethodEl[1], paymentMethodEl[2], paymentMethodEl[3]];
 
 // Open and close PAYMENT METHOD SELECTION on dashboard extendPackage btn
 extendPackage.addEventListener('click', function () {

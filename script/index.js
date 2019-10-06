@@ -1,7 +1,7 @@
-const navBar = document.querySelector('.nav-container');
-const navImg = document.querySelector('.nav-img');
-const navUl = document.querySelector('.nav-ul');
-const scrollBtn = document.querySelector('.scroll-top-btn');
+const navBar = document.querySelector('.nav-container'),
+  navImg = document.querySelector('.nav-img'),
+  navUl = document.querySelector('.nav-ul'),
+  scrollBtn = document.querySelector('.scroll-top-btn');
 
 window.onscroll = function () {
   decreaseNav();
@@ -62,8 +62,8 @@ scrollBtn.addEventListener('click', function () {
 
 function scrollJs(target, duration) {
   if (duration <= 0) { return };
-  let difference = target - document.body.scrollTop;
-  let speed = difference / duration * 10;
+  let difference = target - document.body.scrollTop,
+    speed = difference / duration * 10;
   setTimeout(function () {
     document.body.scrollTop += speed;
     if (document.body.scrollTop == target) { return };
@@ -77,11 +77,11 @@ function scrollCss(target) {
 }
 
 // Copy number/mail to clipboard onclick
-const phone = document.querySelector('.phone-fallen');
-const phoneValue = phone.innerText.slice(0, 11);
-const mail = document.querySelector('.mail-fallen');
-const mailValue = mail.innerText.slice(0, 19);
-const fallenTextCopy = document.querySelectorAll('.fallen-text-copy');
+const phone = document.querySelector('.phone-fallen'),
+  phoneValue = phone.innerText.slice(0, 11),
+  mail = document.querySelector('.mail-fallen'),
+  mailValue = mail.innerText.slice(0, 19),
+  fallenTextCopy = document.querySelectorAll('.fallen-text-copy');
 
 phone.addEventListener('click', function () {
   copyStringToClipboard(phoneValue)

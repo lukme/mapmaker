@@ -1,15 +1,15 @@
-let li = document.querySelectorAll('.nav-container li');
-const homepageHandle = document.querySelector('.homepage-handle');
-const homepageInfo = document.querySelector('.homepage-info');
-const projectsCont = document.querySelectorAll('.projects');
-const accountCont = document.querySelectorAll('.account');
-const interfaceCont = document.querySelectorAll('.interface');
-const paymentCont = document.querySelectorAll('.payment');
-const mobNavHandle = document.querySelector('.fa-bars');
-const navLi = document.querySelectorAll('.nav-container ul li');
-const nav = document.querySelector('.nav-container');
-const dashContent = document.querySelector('.container .content');
-navDashCount = 0;
+let li = document.querySelectorAll('.nav-container li'),
+  navDashCount = 0;
+const homepageHandle = document.querySelector('.homepage-handle'),
+  homepageInfo = document.querySelector('.homepage-info'),
+  projectsCont = document.querySelectorAll('.projects'),
+  accountCont = document.querySelectorAll('.account'),
+  interfaceCont = document.querySelectorAll('.interface'),
+  paymentCont = document.querySelectorAll('.payment'),
+  mobNavHandle = document.querySelector('.fa-bars'),
+  navLi = document.querySelectorAll('.nav-container ul li'),
+  nav = document.querySelector('.nav-container'),
+  dashContent = document.querySelector('.container .content');
 
 // Navigation
 for (let i = 0; i < li.length; i++) {
@@ -46,7 +46,7 @@ if (screenWidth > 450) {
 }
 
 // Slide content
-const pages = [projectsCont, accountCont, interfaceCont, paymentCont]
+const pages = [projectsCont, accountCont, interfaceCont, paymentCont];
 for (let i = 0; i < navLi.length; i++) {
   navLi[i].addEventListener('click', function () {
     for (let k = 0; k < pages.length; k++) {
@@ -64,7 +64,6 @@ for (let i = 0; i < navLi.length; i++) {
       dashContent.style.overflowY = "unset";
       dashContent.style.overflowX = "unset";
     }
-
   });
 }
 
@@ -73,8 +72,8 @@ if (screenWidth < 1201) {
   mobNavHandle.addEventListener('click', () => {
     if (navDashCount % 2 == 0) {
       nav.className = 'nav-container slideFromLeft';
-      let count = 0
-      let x = setInterval(function () {
+      let count = 0,
+        x = setInterval(function () {
         navLi[count].classList.remove('hiddenLeft');
         navLi[count].classList.add('shownLeft');
         count++

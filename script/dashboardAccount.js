@@ -1,15 +1,15 @@
-const changeUsernameBtn = document.querySelector('.account .changeData button');
-const changePasswordBtn = document.querySelector('.account .changePassword button');
-const dashInformerLogin = document.querySelector('.dashInformerLogin');
-const dashInformerPassword = document.querySelector('.changePassword .dashInformerPassword');
-const deleteAccountBtn = document.querySelector('.delete-account-link');
-const deleteAccountNo = document.querySelector('.noDelete');
-const deleteAccountYes = document.querySelector('.yesDelete');
-const deleteAccountInformer = document.querySelector('.personalData .delete-account-informer');
-const deleteAccountWrongMailInformer = document.querySelector('.personalData .wrong-mail');
-const recall1 = document.querySelector('.user-data').children[0];
-const recall2 = document.querySelector('.personalData').children[1].children[0].children[0].children[1];
-const userRecall = [recall1, recall2];
+const changeUsernameBtn = document.querySelector('.account .changeData button'),
+  changePasswordBtn = document.querySelector('.account .changePassword button'),
+  dashInformerLogin = document.querySelector('.dashInformerLogin'),
+  dashInformerPassword = document.querySelector('.changePassword .dashInformerPassword'),
+  deleteAccountBtn = document.querySelector('.delete-account-link'),
+  deleteAccountNo = document.querySelector('.noDelete'),
+  deleteAccountYes = document.querySelector('.yesDelete'),
+  deleteAccountInformer = document.querySelector('.personalData .delete-account-informer'),
+  deleteAccountWrongMailInformer = document.querySelector('.personalData .wrong-mail'),
+  recall1 = document.querySelector('.user-data').children[0],
+  recall2 = document.querySelector('.personalData').children[1].children[0].children[0].children[1],
+  userRecall = [recall1, recall2];
 let username = "Użytkownik";
 
 // Set username onload
@@ -19,12 +19,12 @@ for (let i = 0; i < userRecall.length; i++) {
 
 // Make the informers show on wrong login/password
 changeUsernameBtn.addEventListener('click', function (e) {
-  let loginInputValue = document.querySelector('.account .changeData input');
+  const loginInputValue = document.querySelector('.account .changeData input');
   if (loginInputValue.value) {
     console.log("You may pass");
 
     // Change the username
-    (function changeUsername() {
+    (function() {
       username = e.target.parentNode.children[1].value;
       for (let i = 0; i < userRecall.length; i++) {
         userRecall[i].innerText = username;
@@ -43,7 +43,7 @@ changeUsernameBtn.addEventListener('click', function (e) {
 })
 
 changePasswordBtn.addEventListener('click', function () {
-  let passwordInputValue = document.querySelectorAll('.account .changePassword input');
+  const passwordInputValue = document.querySelectorAll('.account .changePassword input');
   if (passwordInputValue[0].value !== "" && passwordInputValue[1].value !== "" && passwordInputValue[2] !== "") {
     if (passwordInputValue[1].value !== passwordInputValue[2].value || passwordInputValue[0].value === passwordInputValue[1].value) {
       dashInformUserPassword();
@@ -77,8 +77,8 @@ function dashInformUserPassword() {
 deleteAccountBtn.addEventListener('click', dashInformUserDeleteShow);
 deleteAccountNo.addEventListener('click', dashInformUserDeleteShow);
 deleteAccountYes.addEventListener('click', () => {
-  const dashDataPassword = document.querySelector('.personalData').children[1].children[0].children[1].children[1].innerText;
-  const deleteAskForMailPassword = document.querySelector('.askForMail').value;
+  const dashDataPassword = document.querySelector('.personalData').children[1].children[0].children[1].children[1].innerText,
+    deleteAskForMailPassword = document.querySelector('.askForMail').value;
   if (dashDataPassword === deleteAskForMailPassword) {
     alert("Usunięto");
     deleteAccountInformer.className = "dashInformerLogin delete-account-informer hidden";

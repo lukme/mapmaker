@@ -1,25 +1,25 @@
-const navHandle = document.querySelector('.nav-container i');
-const mobNav = document.querySelector('.mobNav');
-const mobNavLi = document.querySelectorAll('.mobNav li');
-const mobNavLiA = document.querySelectorAll('.mobNav li a');
-let screenWidth = screen.width;
-let screenHeight = screen.height;
+const navHandle = document.querySelector('.nav-container i'),
+  mobNav = document.querySelector('.mobNav'),
+  mobNavLi = document.querySelectorAll('.mobNav li'),
+  mobNavLiA = document.querySelectorAll('.mobNav li a');
+let screenWidth = screen.width,
+  screenHeight = screen.height;
 
 // Open-close the mobile menu
 if (screenWidth < 1200) {
   navHandle.addEventListener('click', initNav);
 }
 
-navCount = 0;
+let navCount = 0;
 function initNav() {
   if (navCount % 2 == 0) {
     mobNav.className = 'mobNav slideFromRight';
-    let count = 0
-    let x = setInterval(function () {
-      mobNavLi[count].classList.remove('hiddenRight');
-      count++
-      if (count == 4) { clearInterval(x) }
-    }, 100);
+    let count = 0,
+      x = setInterval(function () {
+        mobNavLi[count].classList.remove('hiddenRight');
+        count++
+        if (count == 4) { clearInterval(x) }
+      }, 100);
     navCount++
   }
   else {
