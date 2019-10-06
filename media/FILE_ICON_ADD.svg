@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112.713" height="135.365" viewBox="0 0 112.713 135.365">
+  <g id="FILE_ICON_ADD" transform="translate(-297.802 -494.15)">
+    <path id="Path_8" data-name="Path 8" d="M353.889,521.986v40.464h45.356l-39.13-40.464Z" transform="translate(1.389 -20.768)" fill="#fff"/>
+    <path id="path" d="M534.41,314.2h52.04l39.03,39.03v78.06a13.339,13.339,0,0,1-13.01,13.01H534.41a13.339,13.339,0,0,1-13.01-13.01V327.21a13.339,13.339,0,0,1,13.01-13.01Zm45.535,45.535h35.778l-35.778-35.778Z" transform="translate(-220.482 179.95)" fill="#f95454"/>
+    <rect id="Rectangle_5" data-name="Rectangle 5" width="71.671" height="35.836" transform="translate(297.802 551.098)" fill="#fff"/>
+    <text id="_.qgs" data-name=".qgs" transform="translate(310.267 571.424)" fill="#f95454" font-size="23" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">.qgs</tspan></text>
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="19.015" cy="19.015" r="19.015" transform="translate(372.485 591.485)" fill="#fff"/>
+    <line id="Line_1" data-name="Line 1" x1="16.516" transform="translate(383.249 610.501)" fill="none" stroke="#f95454" stroke-linecap="round" stroke-width="5"/>
+    <line id="Line_2" data-name="Line 2" x1="16.516" transform="translate(391.501 602.249) rotate(90)" fill="none" stroke="#f95454" stroke-linecap="round" stroke-width="5"/>
+  </g>
+</svg>

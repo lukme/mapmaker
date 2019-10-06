@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Lucas Mecfal">
+  <meta name="description"
+    content="MapMaker.online is an app for making, editing and analysing maps and complex spacial data">
+  <meta name="keywords" content="map, maps, spatial data, data, make, edit, analyse, attributes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/media/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/style/login.css">
+  <link rel="stylesheet" href="/style/chat.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <title>Zaloguj się</title>
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <div class="nav-container">
+    <div class="nav">
+      <a href="/index.html"><img src="/media/maplogo.png" alt="mapmaker_logo" class="nav-img"></a>
+      <ul class="nav-ul">
+        <li><a href="/index.html#whatIs">O aplikacji</a></li>
+        <li><a href="/index.html#offer">Oferta</a></li>
+        <li><a href="/index.html#contact">Kontakt</a></li>
+        <li><a href="/index.html#about">O nas</a></li>
+        <li><a href="/login.html">Zaloguj się</a></li>
+      </ul>
+    </div>
+    <!-- Mobile menu -->
+    <i class="fas fa-bars"></i>
+    <div class="mobNav opacityZero">
+      <ul class="nav-ul">
+        <li class="hiddenRight"><a href="#whatIs">O aplikacji</a></li>
+        <li class="hiddenRight"><a href="#offer">Oferta</a></li>
+        <li class="hiddenRight"><a href="#contact">Kontakt</a></li>
+        <li class="hiddenRight"><a href="#about">O nas</a></li>
+      </ul>
+      <div class="mobNav-login">
+        <a href="/login.html">Zaloguj się</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANDING PAGE -->
+  <div class="login-container">
+    <div class="main-container">
+
+      <h1>Logowanie</h1>
+      <form action="/dashboard.html">
+        <input class="mail slim" type="text" name='username' placeholder="Adres e-mail">
+        <input class="password slim" type="password" name='password' placeholder="Hasło">
+        <a href="/dashboard.html"><input type="submit" value="Zaloguj się"></a>
+        <p class="portfolioInfo slim">Wersja demonstracyjna. Logowanie niewymagane.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="chat">
+    <div class="handle">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="chat-container scaleZero">
+      <div class="chat-header">
+        <i class="fas fa-times"></i>
+        <h2>Czat</h2>
+        <p>Odwiedzałeś naszą sekcję <a href="/faq.html" target="_blank"><u>FAQ</u></a>? Może znajdziesz tam odpowiedź na
+          swoje pytanie.</p>
+      </div>
+      <div class="chat-content">
+        <div class="constant scaleZero">
+          <!-- <i class="fas fa-user-circle"></i> -->
+          <img src="/media/man.svg" alt="admin-avatar">
+          <div class="constant-mes message">
+            <p>W czym możemy Ci pomóc?</p>
+          </div>
+        </div>
+        <!-- <div class="user">
+          <i class="fas fa-user-circle"></i>
+          <div class="user-mes message">
+            <p></p>
+            <p class="time"></p>
+          </div>
+        </div> -->
+      </div>
+      <div class="chat-footer">
+        <input type="text" name="message" placeholder="Wpisz swoją wiadomość...">
+        <img class="send-button" src="/media/send.svg" alt="send">
+      </div>
+    </div>
+  </div>
+
+  <script src="/script/global.js" charset="utf-8"></script>
+  <script src="/script/chat.js" charset="utf-8"></script>
+  <!-- <script src="/script/login.js" charset="utf-8"></script> -->
+</body>
+
+</html>

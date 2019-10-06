@@ -1,0 +1,389 @@
+.projects {
+  position: absolute;
+  top: 0;
+  @include size(100%, 100%);
+  padding-top: 12%;
+  padding-left: 12%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow-x: auto;
+  transition: all 300ms ease;
+  .project, .add-project {
+    position: relative;
+    display: inline-block;
+    width: 320px;
+    height: 520px;
+    margin-right: 100px;
+    background-color: rgba(244, 241, 222, 0.8);
+    color: $dark-blue;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.3);
+    transition: all 200ms ease;
+    &:hover {
+      background-color: $beige;
+      transform: scale(1.02);
+    }
+    .image {
+      height: 40%;
+      width: 100%;
+      box-sizing: border-box;
+      background: #fff url('/media/EXAMPLEMAP.png') center center no-repeat;
+      background-size: cover;
+    }
+    h3 {
+      position: absolute;
+      left: 10%;
+      top: 44%;
+      white-space: normal;
+      width: 80%;
+      text-align: center;
+      margin: 0;
+      color: $sunset-orange;
+      overflow: hidden;
+    }
+    p {
+      position: absolute;
+      left: 24%;
+      top: 56%;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .project-time {
+      top: 60.5%;
+      left: 43.5%;
+      opacity: 0.6;
+      font-size: 13px;
+    }
+    .menage {
+      position: absolute;
+      left: 20%;
+      top: 68%;
+      width: 60%;
+      height: 130px;
+      border-radius: 15px;
+      background-color: $sunset-orange;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+      button {
+        display: block;
+        margin: 10px auto 0 auto;
+        width: 80%;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        background-color: $beige;
+        color: $sunset-orange;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        transition: all 150ms ease;
+        &:hover {
+          width: 90%;
+          font-weight: 700;
+          color: #d9503f;
+        }
+      }
+      .disabled {
+        opacity: 0.6;
+        color: #373737;
+        pointer-events: none;
+      }
+    }
+  }
+  .add-project {
+    position: relative;
+    margin-top: 80px;
+    width: 260px;
+    height: 360px;
+    cursor: pointer;
+    color: $sunset-orange;
+    transition-property: background-color, transform;
+    &:hover {
+      transform: scale(1.04);
+    }
+    i {
+      position: absolute;
+      top: 25%;
+      left: 37%;
+      font-size: 80px;
+    }
+    h3 {
+      position: absolute;
+      top: 55%;
+    }
+  }
+}
+
+.add-project-modal-bg, .delete-project-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(50, 53, 75, 0.85);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: all 200ms ease;
+  .add-project-modal, .delete-project-modal {
+    position: fixed;
+    top: 34%;
+    left: 35%;
+    width: 28%;
+    height: 28%;
+    padding-left: 40px;
+    border-radius: 15px;
+    background-color: #fff;
+    color: $sunset-orange;
+    i {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      cursor: pointer;
+      font-size: 22px;
+      transition: all 150ms ease;
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+    h3 {
+      position: absolute;
+      top: 6%;
+    }
+    input[name=add] {
+      position: absolute;
+      top: 40%;
+      width: 50%;
+      border: none;
+      border-bottom: 1px solid #737373;
+      font-size: 19px;
+      font-family: 'Oswald', sans-serif;
+      padding-bottom: 5px;
+      outline: none;
+    }
+    input[name=submit-add] {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      width: 160px;
+      height: 40px;
+      border: none;
+      border-radius: 15px;
+      background-color: $sunset-orange;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      transition: all 200ms ease;
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+    .loader {
+      width: 40px;
+      height: auto;
+      position: absolute;
+      bottom: 40px;
+      right: 210px;
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) and (min-width: 1201px) {
+  .container {
+    .content {
+      .projects {
+        padding-top: 7%;
+        .add-project {
+          margin-top: 60px;
+          width: 210px;
+          height: 300px;
+          i {
+            top: 25%;
+            font-size: 70px;
+          }
+          h3 {
+            top: 56%;
+            left: 16%;
+            width: 70%;
+            font-size: 18px;
+          }
+        }
+        .project {
+          width: 260px;
+          height: 420px;
+          h3 {
+            line-height: 27px;
+          }
+          .menage {
+            left: 15%;
+            top: 71%;
+            width: 70%;
+            height: 110px;
+            background-color: rgba(238, 99, 82, 0.2);
+            button {
+              background-color: $sunset-orange;
+              color: $beige;
+              height: 24px;
+              font-size: 13px;
+              border-radius: 7px;
+            }
+          }
+          p {
+            left: 18%;
+          }
+          .project-time {
+            left: 42%;
+            top: 61.5%;
+          }
+        }
+      }
+      .add-project-modal, .delete-project-modal {
+        top: 25%;
+        left: 30%;
+        width: 38%;
+        height: 45%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 450px) {
+  .container .content .projects {
+    .add-project-modal-bg .add-project-modal, .delete-project-modal-bg .delete-project-modal {
+      left: 11%;
+      width: 73%;
+    }
+  }
+  .container .content .delete-project-modal-bg .delete-project-modal {
+    left: 11%;
+    width: 73%;
+  }
+  
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    .content {
+      .projects {
+        padding-top: 28%;
+        .add-project {
+          width: 270px;
+          height: 320px;
+          margin-top: 50px;
+          margin-right: 40px;
+        }
+        .project {
+          width: 260px;
+          height: 420px;
+          margin-right: 50px;
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            top: 54%;
+            left: 17%;
+          }
+          .project-time {
+            left: 43.5%;
+            top: 59.5%;
+          }
+          .menage {
+            left: 15%;
+            width: 70%;
+          }
+        }
+        .add-project-modal {
+          top: 28%;
+          left: 0;
+          width: 100%;
+          height: 40%;
+          padding-left: 37px;
+          border-radius: 0;
+          box-sizing: border-box;
+          h3 {
+            width: 80%;
+          }
+          .title {
+            width: 80%;
+          }
+        }
+      }
+      .delete-project-modal-bg {
+        .delete-project-modal {
+          top: 28%;
+          left: 0;
+          width: 100%;
+          height: 40%;
+          padding-left: 37px;
+          border-radius: 0;
+          box-sizing: border-box;
+          h3 {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile horizontally
+@media screen and (max-width: 850px) and (max-height: 451px) {
+  .container .content {
+    .projects {
+        margin-top: 0;
+        padding-top: 5%;
+      .add-project {
+        width: 170px;
+        height: 300px;
+        margin-top: 0;
+        margin-bottom: 0 !important;
+        i {
+          top: 20%;
+          left: 39%;
+          font-size: 50px;
+        }
+        h3 {
+          font-size: 20px;
+          font-weight: 400;
+        }
+      }
+      .project {
+        width: 200px;
+        height: 300px;
+        h3 {
+          font-size: 16px;
+          font-weight: 400;
+        }
+        p {
+          display: none;
+        }
+        .menage {
+          bottom: 0;
+          top: unset;
+          left: 0;
+          width: 100%;
+          height: 118px;
+          border-radius: 0;
+          background-color: rgba(238, 99, 82, 0.8);
+          button {
+            height: 26px;
+            font-size: 13px;
+          }
+        }
+      }
+      .add-project-modal-bg .add-project-modal {
+        width: 100%;
+        height: 56%;
+        left: 0;
+        top: 22%;
+        border-radius: 0;
+        box-sizing: border-box;
+      }
+    }
+    .delete-project-modal-bg .delete-project-modal {
+      width: 100%;
+      height: 56%;
+      left: 0;
+      top: 22%;
+      border-radius: 0;
+      box-sizing: border-box;
+    }
+  }
+}

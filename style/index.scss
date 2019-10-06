@@ -1,0 +1,951 @@
+@import "global";
+@import "animation";
+
+// Global
+html {
+  cursor: auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 !important;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  background-color: $beige;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+button,
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+a {
+  color: #fff;
+}
+// End global
+
+/* MAIN PAGE */
+.landing-container {
+  @include container();
+  background: #f4f1de url("/media/landing.svg") no-repeat center center;
+  background-size: cover;
+  h1 {
+    @include posAbs(32%, 10%);
+    margin: 0;
+    color: #fff;
+  }
+  p {
+    @include posAbs(42%, 10%);
+    color: #fff;
+  }
+  button {
+    @include posAbs(52%, 10%);
+    width: 230px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    background-color: $beige;
+    color: $sunset-orange;
+    font-size: 25px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    padding-bottom: 5px;
+    box-shadow: $box-shadow;
+    transition: all 200ms ease;
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+}
+
+/* WHAT IS PAGE */
+.what_is-container {
+  @include container();
+  background: #f4f1de url("/media/whatis.svg") no-repeat center center;
+  background-size: cover;
+  img {
+    @include imgPos(25%, 45%, 900px);
+  }
+  h1 {
+    @include posAbs(32%, 10%);
+    margin: 0;
+    color: $sunset-orange;
+  }
+  p {
+    @include posAbs(45%, 10%);
+    width: 35%;
+    color: #6b6b6b;
+  }
+}
+
+/* OFFER PAGE */
+.offer-container {
+  @include container();
+  background: #f4f1de url("/media/offer.svg") no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    text-align: center;
+    color: $sunset-orange;
+  }
+  .offerHeader {
+    width: 100%;
+  }
+  h3 {
+    font-size: 25px;
+    margin-top: 20px;
+    color: $beige;
+  }
+}
+.offer-elements-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 550px;
+  width: 100%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.offerOptions {
+  width: 1210px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -605px;
+  display: block;
+}
+.standard, .premium, .pro {
+  @include size(300px, 400px);
+  display: inline-block;
+  margin: 0 50px;
+  background-color: $blue;
+  transition: all 200ms ease;
+  &:hover {
+    transform: scale(1.03);
+  }
+  h2 {
+    color: $blue;
+    margin: 0;
+    font-size: 40px;
+  }
+}
+.standard-title,
+.premium-title,
+.pro-title {
+  height: 50%;
+  padding-top: 10%;
+  box-sizing: border-box;
+  background-color: $orange;
+}
+.standard-description,
+.premium-description,
+.pro-description {
+  height: 50%;
+  padding-top: 5%;
+}
+
+/* CONTACT PAGE */
+.contact-container {
+  @include container();
+  background: #f4f1de url("/media/contact.svg") no-repeat center center;
+  background-size: cover;
+  img {
+    @include imgPos(14%, 5%, 900px);
+  }
+  h1 {
+    @include posAbs(32%, 72%);
+    margin: 0;
+    color: $sunset-orange;
+  }
+  .fas {
+    color: #fff;
+    font-size: 75px;
+    padding-top: 50px;
+  }
+}
+
+.contact-el-container {
+  position: absolute;
+  top: 48%;
+  width: 100%;
+  height: 180px;
+}
+
+.phone,
+.mail,
+.web {
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  background-color: $dark-blue;
+  text-align: center;
+  box-sizing: border-box;
+}
+.phone {
+  left: 56%;
+}
+.mail {
+  left: 69%;
+}
+.web {
+  left: 82%;
+}
+.phoneMob,
+.mailMob,
+.webMob {
+  display: none;
+}
+.phone-fallen,
+.mail-fallen,
+.web-fallen {
+  @include posAbs(0, 0);
+  width: 100%;
+  height: 100%;
+  padding-top: 37%;
+  transition: all 300ms ease;
+  opacity: 0;
+  box-sizing: border-box;
+  color: $sunset-orange;
+  font-size: 28px;
+  background-color: rgba(45, 47, 68, 0.96);
+}
+
+.fallen-text-copy,
+.fallen-text {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+.fallen-text {
+  bottom: 4%;
+}
+
+.mail-fallen {
+  padding-top: 41%;
+  font-size: 18px;
+}
+.phone:hover .phone-fallen,
+.mail:hover .mail-fallen,
+.web:hover .web-fallen {
+  animation: contactShow 1400ms forwards;
+  background-color: $sunset-orange;
+  color: white;
+}
+
+.about-container {
+  @include container();
+  background: #f4f1de url("/media/about.svg") no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  img {
+    @include imgPos(14%, 34%, 600px);
+  }
+  h1 {
+    @include posAbs(60%, 46.6%);
+    text-align: center;
+    color: $beige;
+  }
+  p {
+    @include posAbs(74%, 33%);
+    color: #32354b;
+    text-align: center;
+    width: 35%;
+  }
+}
+
+.shadow-maker {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 7%;
+  background-color: #f4f1de;
+  box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+  transition: all 1800ms ease;
+}
+
+.footer {
+  @include container();
+  margin-bottom: 0;
+  width: 100%;
+  height: 540px;
+  background-color: #3d405b;
+  color: #f4f1de;
+  text-align: center;
+  i {
+    color: #ee6352;
+  }
+  img {
+    height: 60px;
+    width: auto;
+  }
+  ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    font-size: 17px;
+  }
+  li {
+    margin-top: 20px;
+  }
+  a {
+    color: #f4f1de;
+    transition: color 200ms ease;
+    &:hover {
+      color: $orange;
+    }
+  }
+  h3 {
+    color: #ee6352;
+  }
+  .footer-left {
+    @include posAbs(35%, 22%);
+  }
+  .footer-center {
+    @include posAbs(25%, 50%);
+    width: 26%;
+    margin-left: -13%;
+    p {
+      font-size: 17px;
+    }
+  }
+  .footer-right {
+    @include posAbs(35%, 70%);
+  }
+}
+
+/* Style dedicated to EDGE */
+@supports (-ms-ime-align: auto) {
+  .offer-grid-container {
+    display: grid !important;
+  }
+}
+// End style Edge
+
+// Style dedicated to IE
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .standard,
+  .premium,
+  .pro {
+    float: left;
+  }
+}
+
+// laptop
+@media screen and (max-width: 1600px) and (min-width: 1201px) {
+  h1 {
+    font-size: 50px;
+  }
+  body {
+    font-size: 17px !important;
+  }
+  .landing-container {
+    h1 {
+      top: 35%;
+    }
+    p {
+      top: 46%;
+    }
+    button {
+      top: 62%;
+    }
+  }
+  .what_is-container {
+    p {
+      top: 47%;
+    }
+    img {
+      width: 600px;
+    }
+  }
+  .offer-container {
+    background-size: contain;
+    background-color: $beige;
+    overflow: visible;
+  }
+  .contact-container {
+    background: #f4f1de url("/media/contact.svg") no-repeat right center;
+    background-size: cover;
+    background-color: $beige;
+    overflow: visible;
+    img {
+      width: 600px;
+      top: 16%;
+      left: 7%;
+    }
+    .contact-el-container {
+      top: 50%;
+    }
+    h1 {
+      top: 29%;
+    }
+    .phone,
+    .mail,
+    .web {
+      width: 130px;
+      height: 130px;
+      i {
+        font-size: 45px;
+        padding-top: 42px;
+      }
+    }
+    .phone-fallen,
+    .mail-fallen,
+    .web-fallen {
+      font-size: 18px;
+    }
+    .mail-fallen {
+      font-size: 12px;
+    }
+  }
+  .about-container {
+    height: 120vh;
+    background-size: contain;
+    background-color: $beige;
+    overflow: visible;
+    img {
+      width: 450px;
+    }
+    h1 {
+      top: 420px;
+    }
+    p {
+      top: 540px;
+    }
+  }
+}
+
+// Tablet big
+@media screen and (max-width: 1200px) and (min-width: 1024px) and (orientation: portrait) {
+  .what_is-container, .offer-container, .contact-container, .about-container {
+    height: 70vh;
+  }
+}
+
+// Tablet small
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .landing-container {
+    p {
+      width: 60%;
+    }
+    button {
+      top: 56%;
+      width: 210px;
+      height: 40px;
+      font-size: 18px;
+    }
+  }
+  .what_is-container {
+    h1 {
+      top: 500px;
+      left: 0%;
+      width: 100%;
+      text-align: center;
+    }
+    img {
+      top: 150px;
+      left: 50%;
+      margin-left: -250px;
+      width: 500px;
+    }
+    p {
+      top: 580px;
+      width: 80%;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+  .offer-container {
+    .offer-elements-container {
+      height: 400px;
+    }
+    .offerOptions {
+      width: 100%;
+      left: 0;
+      margin-left: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+    .standard, .premium, .pro {
+      @include size(200px, 300px);
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+  .contact-container {
+    .fas {
+      @include posAbs(17%, 22%);
+      font-size: 50px;
+      padding-top: 20px;
+    }
+    img {
+      width: 400px;
+      left: 50%;
+      top: 100px;
+      margin-left: -200px;
+    }
+    h1 {
+      top: 450px;
+      left: unset;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+    .contact-el-container {
+      top: 570px;
+      .phone,
+      .mail,
+      .web {
+        width: 140px;
+        height: 140px;
+      }
+      .phone {
+        left: 15%;
+      }
+      .mail {
+        left: 50%;
+        margin-left: -70px;
+      }
+      .web {
+        right: 15%;
+        left: unset;
+      }
+      .phone-fallen,
+      .mail-fallen,
+      .web-fallen {
+        font-size: 13px;
+      }
+    }
+  }
+  .about-container {
+    img {
+      width: 400px;
+      left: 50%;
+      top: 200px;
+      margin-left: -200px;
+    }
+    h1 {
+      top: 500px;
+      left: unset;
+      width: 100%;
+    }
+    p {
+      width: 60%;
+      left: 50%;
+      margin-left: -30%;
+      top: 600px;
+      font-weight: 400;
+    }
+  }
+  .footer {
+    .footer-content {
+      p,
+      a {
+        font-size: 15px;
+        font-weight: 400;
+      }
+      h1,
+      h3 {
+        font-size: 17px;
+      }
+      li {
+        margin-top: 10px;
+      }
+      .footer-center-mob {
+        img {
+          margin-top: 15%;
+        }
+      }
+    }
+  }
+}
+
+// Mobile vertically
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 28px;
+  }
+  .landing-container {
+    background: #f4f1de url("/media/landingMob.svg") no-repeat center center;
+    background-size: cover;
+    p {
+      font-size: 15px;
+      width: 80%;
+    }
+    button {
+      top: 66%;
+      left: 50%;
+      margin-left: -85px;
+      width: 170px;
+      height: 40px;
+      font-size: 20px;
+    }
+  }
+  .what_is-container {
+    background: #f4f1de url("/media/whatMob.svg") no-repeat center center;
+    background-size: cover;
+    h1 {
+      top: 49%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+    img {
+      top: 15%;
+      left: 50%;
+      margin-left: -150px;
+      width: 300px;
+    }
+    p {
+      top: 57%;
+      width: 80%;
+      font-weight: 400;
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+  .offer-container {
+    background: #f4f1de url("/media/offerMob.svg") no-repeat center center;
+    background-size: cover;
+    height: 800px;
+    max-height: 800px;
+  }
+  .contact-container {
+    background: $beige url("/media/contactMob.svg") no-repeat center center;
+    background-size: cover;
+    height: 900px;
+    max-height: 900px;
+    img {
+      top: 6%;
+      width: 280px;
+      margin-left: -140px;
+    }
+    h1 {
+      top: 35%;
+    }
+    .contact-el-container {
+      height: 300px;
+      position: absolute;
+      top: 43%;
+      .phone,
+      .mail,
+      .web {
+        left: 10%;
+        width: 80%;
+        height: 80px;
+        margin-left: 0;
+        border-radius: 15px;
+        transition: all 200ms ease;
+        &:active {
+          transform: scale(1.1);
+        }
+  
+        i {
+          font-size: 40px;
+          padding-top: 5px;
+          right: 70%;
+          top: 15px;
+        }
+      }
+      .mail {
+        top: 100px;
+      }
+      .web {
+        top: 200px;
+      }
+      .phone-fallen,
+      .mail-fallen,
+      .web-fallen {
+        display: none;
+      }
+      .phoneMob,
+      .mailMob,
+      .webMob {
+        display: block;
+        p {
+          @include posAbs(12%, 45%);
+          text-align: left;
+          width: 40%;
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .about-container {
+    background: $beige url("/media/aboutMob.svg") no-repeat center center;
+    background-size: cover;
+    img {
+      width: 280px;
+      top: 4%;
+      left: 50%;
+      margin-left: -140px;
+    }
+    h1 {
+      top: 37%;
+      left: 0;
+      width: 100%;
+    }
+    p {
+      font-weight: 400;
+      font-size: 15px;
+      top: 45%;
+    }
+  }
+  .footer {
+    height: 450px;
+    .footer-content {
+      .footer-center-mob img {
+        margin-top: unset;
+      }
+      img {
+        @include posAbs(21%, 50%);
+        width: 40px;
+        height: auto;
+        margin-left: -20px;
+      }
+      h3 {
+        @include posAbs(28%, 0);
+        width: 100%;
+      }
+      p {
+        @include posAbs(36%, 0);
+        font-size: 13px;
+        font-weight: 400;
+        width: 100%;
+      }
+      .footer-underline {
+        @include posAbs(49%, 50%);
+        width: 40%;
+        margin-left: -20%;
+        height: 1px;
+        background-color: $beige;
+      }
+      ul {
+        position: absolute;
+        top: 51%;
+        width: 100%;
+        font-size: 14px !important;
+        li {
+          margin-top: 5px;
+          font-weight: 400;
+        }
+        .footer-nav {
+          font-weight: 700;
+          font-size: 18px;
+          color: $sunset-orange;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .landing-container {
+    h1 {
+      font-size: 23px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+// Mobile horizontally
+@media screen and (max-width: 850px) and (max-height: 451px) {
+  h1 {
+    font-size: 34px;
+  }
+  .landing-container {
+    h1 {
+      top: 30%;
+    }
+    p {
+      font-size: 15px;
+      top: 44%;
+    }
+    button {
+      top: 70%;
+      width: 180px;
+      height: 35px;
+      font-size: 15px;
+    }
+  }
+  .what_is-container {
+    height: 80vw;
+    img {
+      margin-left: -125px;
+      width: 250px;
+      top: 15%;
+    }
+    h1 {
+      left: 0;
+      top: 50%;
+      margin-left: 0;
+      width: 100%;
+      text-align: center;
+    }
+    p {
+      top: 60%;
+      font-size: 15px;
+    }
+  }
+  .offer-container {
+    height: 390px;
+    background-size: contain;
+    .offer-elements-container .offerOptions {
+      bottom: unset;
+      top: 25%;
+      .standard, .premium, .pro {
+        @include size(140px, 100%);
+        margin: 0 20px;
+        h2 {
+          font-size: 30px;
+        }
+        p {
+          font-size: 13px;
+          margin: 5px 0;
+        }
+        .standard-title, .premium-title, .pro-title {
+          padding: 10px 0
+        }
+        .standard-description, .premium-description, .pro-description {
+          padding: 10% 0;
+        }
+      }
+    }
+  }
+  .contact-container {
+    height: 620px;
+    background: $beige url("/media/contactMob_V.svg") no-repeat center center;
+    background-size: cover;
+    overflow: visible;
+    img {
+      width: 250px;
+      margin-left: -125px;
+      top: 2%;
+    }
+    h1 {
+      top: 40%;
+    }
+    .contact-el-container {
+      height: 100px;
+      top: 55%;
+      .phone,
+      .mail,
+      .web {
+        left: 20%;
+        top: 0;
+        width: 60%;
+        height: 69px;
+        border-radius: 15px;
+        transition: all 200ms ease;
+        &:active {
+          transform: scale(1.1);
+        }
+        i {
+          font-size: 40px;
+          padding-top: 5px;
+          right: 70%;
+          top: 10px;
+        }
+      }
+      .mail {
+        top: 100px;
+        margin-left: 0;
+      }
+      .web {
+        top: 200px;
+      }
+      .phone-fallen,
+      .mail-fallen,
+      .web-fallen {
+        display: none;
+      }
+      .phoneMob,
+      .mailMob,
+      .webMob {
+        display: block;
+        p {
+          @include posAbs(8%, 45%);
+          text-align: left;
+          width: 40%;
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .about-container {
+    height: 500px;
+    background: $beige url("/media/aboutMob_V.svg") no-repeat center center;
+    background-size: cover;
+    overflow: visible;
+    img {
+      margin-left: -125px;
+      width: 250px;
+      top: 12%;
+    }
+    h1 {
+      left: 0;
+      top: 58%;
+      color: #ee6352;
+      margin-left: 0;
+      width: 100%;
+      text-align: center;
+    }
+    p {
+      top: 78%;
+      width: 70%;
+      margin-left: -35%;
+      color: #ee6352;
+      font-size: 15px;
+    }
+  }
+  .footer {
+    height: 360px;
+    .footer-content {
+      p {
+        font-size: 13px;
+      }
+      .footer-center-mob {
+        ul li {
+          margin-top: 2px;
+          a {
+            font-size: 13px;
+          }
+        }
+        img {
+          margin-top: 11%;
+          height: 35px;
+        }
+      }
+    }
+  }
+}

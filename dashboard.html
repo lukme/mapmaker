@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Lucas Mecfal">
+  <meta name="description"
+    content="MapMaker.online is an app for making, editing and analysing maps and complex spacial data">
+  <meta name="keywords" content="map, maps, spatial data, data, make, edit, analyse, attributes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/media/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/style/dashboard.css">
+  <link rel="stylesheet" href="/style/chat.css">
+  <link rel="stylesheet" href="/style/scrollbar.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <title>Panel Użytkownika</title>
+</head>
+
+<body>
+
+  <!-- LANDING PAGE -->
+  <div class="container">
+
+    <i class="fas fa-bars"></i>
+
+    <div class="nav-container">
+      <h2 class="nav-header">Panel użytkownika</h2>
+      <ul>
+        <li class="nav-active">
+          <div class="img-sizer"><i class="fas fa-layer-group"></i></div>
+          <p>Projekty</p>
+        </li>
+        <li class="nav-passive">
+          <div class="img-sizer"><i class="fas fa-user"></i></div>
+          <p>Konto</p>
+        </li>
+        <li class="nav-passive">
+          <div class="img-sizer"><i class="fas fa-palette"></i></div>
+          <p>Interfejs</p>
+        </li>
+        <li class="nav-passive">
+          <div class="img-sizer"><i class="fas fa-wallet"></i></div>
+          <p>Płatności</p>
+        </li>
+      </ul>
+      <div class="user">
+        <img src="/media/man.svg" alt="user-avatar">
+        <div class="user-data">
+          <h2></h2>
+          <p>Administrator</p>
+          <p class="log-out"><a href="/login.html">Wyloguj</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content firstBack">
+      <div class="projects visible">
+
+        <div class="add-project">
+          <i class="fas fa-plus"></i>
+          <h3>Dodaj nowy projekt</h3>
+        </div>
+
+        <!-- <div class="project">
+        <div class="image"></div>
+        <div class="menage">
+          <button class="disabled">EDYTUJ</button>
+          <button class="disabled">PUBLIKUJ</button>
+          <button>USUŃ</button>
+        </div>
+        <h3>ANALIZA KOMUNIKACYJNA DLA CAŁEJ POLSKI</h3>
+        <p>Projekt utworzony: 27.06.19r.</p>
+        <p class="project-time">12:30:12</p>
+      </div> -->
+
+        <div class="add-project-modal-bg hidden">
+          <div class="add-project-modal">
+            <i class="fas fa-times"></i>
+            <h3>Dodaj nowy projekt</h3>
+            <input type="text" name="add" maxlength="38" class="title" placeholder="Wpisz tytuł projektu">
+            <input type="submit" name="submit-add" class="submit-add" value="Dodaj">
+            <img class="loader" src="/media/loading.svg" alt="loading">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="delete-project-modal-bg hidden">
+        <div class="delete-project-modal">
+          <i class="fas fa-times"></i>
+          <h3>Czy na pewno chcesz usunąć projekt?</h3>
+          <input type="submit" name="submit-add" class="submit-add" value="Usuń">
+          <img class="loader" src="/media/loading.svg" alt="loading">
+        </div>
+      </div>
+
+      <div class="account hidden">
+        <div class="actualPackage package">
+          <h3>Twój aktualny pakiet</h3>
+          <h1>Pro</h1>
+          <p>Data wygaśnięcia pakietu:</p>
+          <p class="expire-date">20.03.2020r.</p>
+        </div>
+
+        <div class="changeUsername changeData">
+          <h3>Zmień nazwę użytkownika</h3>
+          <input type="text" name="username" placeholder="Nowa nazwa" maxlength="23" autocomplete="off">
+          <button type="button">Zmień</button>
+          <div class="dashInformerLogin hidden">
+            <img src="/media/theX.svg" alt="errorImage">
+            <h2>Brak nazwy użytkownika</h2>
+          </div>
+        </div>
+
+        <div class="personalData">
+          <h3>Twoje dane osobowe</h3>
+          <table>
+            <tr>
+              <th>Nazwa użytkownika:</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>E-mail:</th>
+              <td>User@gmail.com</td>
+            </tr>
+            <tr class="avatar-change-tr">
+              <th>Avatar:</th>
+              <td>
+                <img src="/media/man.svg" alt="avatar">
+                <!-- <p class="avatar-change">Zmień avatar</p> -->
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="delete-account-link">Chcę usunąć swoje konto</td>
+            </tr>
+          </table>
+          <div class="dashInformerLogin delete-account-informer hidden">
+            <h2>Czy na pewno chcesz usunąć konto?</h2>
+            <input type="text" class="askForMail" placeholder="Adres e-mail">
+            <input class="yesDelete" type="submit" value="Tak">
+            <input class="noDelete" type="submit" value="Nie">
+          </div>
+          <div class="dashInformerPassword wrong-mail hidden">
+            <img src="/media/theX.svg" alt="errorImage">
+            <h2>Błędny adres e-mail</h2>
+          </div>
+        </div>
+
+        <div class="changePassword changeData">
+          <h3>Zmień hasło</h3>
+          <input type="password" name="old-password" class="old-password" placeholder="Obecne hasło" autocomplete="off">
+          <input type="password" name="new-password" class="new-password" placeholder="Nowe hasło" autocomplete="off">
+          <input type="password" name="new-password" class="repeat-new-password" placeholder="Powtórz nowe hasło"
+            autocomplete="off">
+          <button type="button" value="Zmień">Zmień</button>
+          <a href="/help.html">
+            <p>Zapomniałeś hasła?</p>
+          </a>
+          <div class="dashInformerPassword hidden">
+            <img src="/media/theX.svg" alt="errorImage">
+            <h2>Nieprawidłowe dane</h2>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="interface hidden">
+        <h1>Wybierz motyw</h1>
+        <img class="chosen" src="/media/interface-1.svg" alt="interface-1">
+        <img class="" src="/media/interface-2.svg" alt="interface-2">
+        <img class="" src="/media/interface-3.svg" alt="interface-3">
+      </div>
+
+      <div class="payment hidden">
+        <div class="actualPackage package">
+          <h3>Twój aktualny pakiet</h3>
+          <h1>Pro</h1>
+          <p>Data wygaśnięcia pakietu:</p>
+          <p class="expire-date">20.03.2020r.</p>
+        </div>
+        <div class="extendPackage package">
+          <h3>Przedłuż pakiet</h3>
+          <p class="packagePara">Dokonaj płatności w celu przedłużenia swojego obecnego pakietu na kolejny rok.</p>
+          <button type="button" class="packageBtn">Przedłuż</button>
+        </div>
+        <div class="changePackage package">
+          <h3>Zmień pakiet</h3>
+          <p class="packagePara">Dokonaj płatności w celu przedłużenia swojego obecnego pakietu na kolejny rok.</p>
+          <button type="button" class="packageBtn">Zmień</button>
+        </div>
+
+        <!-- Choose package before payment modal -->
+        <div class="packageChooseModal paymentMethodBg packageChoose hidden">
+          <div class="paymentMethod">
+            <div class="xHideout">
+              <i class="fas fa-times"></i>
+            </div>
+            <div class="dotpay">
+              <ul>
+                <li>
+                  <h2>Standard</h2>
+                </li>
+                <li>
+                  <p>30zł/m-c</p>
+                </li>
+                <li>
+                  <p>1 projekt</p>
+                </li>
+                <li>
+                  <p>10 warstw w projekcie</p>
+                </li>
+                <li>
+                  <p>10MB przestrzeni na dysku</p>
+                </li>
+              </ul>
+            </div>
+            <div class="przelewy24">
+              <ul>
+                <li>
+                  <h2>Premium</h2>
+                </li>
+                <li>
+                  <p>80zł/m-c</p>
+                </li>
+                <li>
+                  <p>3 projekty</p>
+                </li>
+                <li>
+                  <p>20 warstw w projekcie</p>
+                </li>
+                <li>
+                  <p>50MB przestrzeni na dysku</p>
+                </li>
+              </ul>
+            </div>
+            <div class="paypal">
+              <ul>
+                <li>
+                  <h2>Pro</h2>
+                </li>
+                <li>
+                  <p>120zł/m-c</p>
+                </li>
+                <li>
+                  <p>10 projektów</p>
+                </li>
+                <li>
+                  <p>50 warstw w projekcie</p>
+                </li>
+                <li>
+                  <p>200MB przestrzeni na dysku</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End choose package before payment modal -->
+
+        <!-- Choose payment method -->
+        <div class="paymentMethodModal paymentMethodBg hidden">
+          <div class="paymentMethod">
+            <div class="xHideout">
+              <i class="fas fa-times"></i>
+            </div>
+            <div class="dotpay"><img src="/media/dotpay.png" alt="dotpay">
+              <form>
+                <button type="submit" class="packageBtn">Wybierz</button>
+              </form>
+            </div>
+            <div class="przelewy24"><img src="/media/przelewy24.png" alt="przelewy24">
+              <form>
+                <button type="submit" class="packageBtn">Wybierz</button>
+              </form>
+            </div>
+            <div class="paypal"><img src="/media/paypal.svg" alt="paypal">
+              <form>
+                <button type="submit" class="packageBtn">Wybierz</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+        <!-- End choose payment method -->
+
+        <div class="paymentStory">
+          <h3>Historia płatności</h3>
+          <div class="paymentTable">
+            <table>
+              <tr>
+                <th>Użytkownik</th>
+                <th>Przeznaczenie</th>
+                <th>Kwota</th>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+              <tr>
+                <td>User</td>
+                <td>Przedłużenie pakietu Premium</td>
+                <td>20000zł</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- About IE Info -->
+  <div class="ie">
+    <p>Internet Explorer nie jest przeglądarką wspieraną w panelu użytkownika ze względu na ograniczenia w funkcjonalności.</p>
+  </div>
+
+  <!-- HomePage link -->
+  <div class="homepage">
+    <a href="/index.html">
+      <div class="homepage-handle">
+        <i class="fas fa-home"></i>
+      </div>
+    </a>
+    <div class="homepage-info homepage-passive">
+      <p>Wróć do strony logowania</p>
+    </div>
+  </div>
+
+  <!-- Chat -->
+  <div class="chat">
+    <div class="handle">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="chat-container scaleZero">
+      <div class="chat-header">
+        <i class="fas fa-times"></i>
+        <h2>Czat</h2>
+        <p>Odwiedzałeś naszą sekcję <a href="/faq.html" target="_blank"><u>FAQ</u></a>? Może znajdziesz tam odpowiedź na
+          swoje pytanie.</p>
+      </div>
+      <div class="chat-content">
+        <div class="constant scaleZero">
+          <!-- <i class="fas fa-user-circle"></i> -->
+          <img src="/media/man.svg" alt="admin-avatar">
+          <div class="constant-mes message">
+            <p>W czym możemy Ci pomóc?</p>
+          </div>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" name="message" placeholder="Wpisz swoją wiadomość...">
+        <img class="send-button" src="/media/send.svg" alt="send">
+      </div>
+    </div>
+  </div>
+
+  <script src="/script/global.js" charset="utf-8"></script>
+  <script src="/script/chat.js" charset="utf-8"></script>
+  <script src="/script/dashboard.js" charset="utf-8"></script>
+  <script src="/script/dashboardProjects.js" charset="utf-8"></script>
+  <script src="/script/dashboardAccount.js" charset="utf-8"></script>
+  <script src="/script/dashboardInterface.js" charset="utf-8"></script>
+  <script src="/script/dashboardPayment.js" charset="utf-8"></script>
+</body>
+
+</html>

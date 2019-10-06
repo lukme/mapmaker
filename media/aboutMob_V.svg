@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <clipPath id="clip-Dashboard_Payments_3">
+      <rect width="640" height="360"/>
+    </clipPath>
+  </defs>
+  <g id="Dashboard_Payments_3" data-name="Dashboard Payments – 3" clip-path="url(#clip-Dashboard_Payments_3)">
+    <rect width="640" height="360" fill="#f4f1de"/>
+    <path id="Path_10" data-name="Path 10" d="M-574.793,1335.871l-55.984,4.074-53.185,38.536,8.4,64.413,1.866,40.091,53.807,18.039,91.441-9.611,76.823-30.2,48.209-32.657-24.882-59.374-62.485-37.945Z" transform="translate(826.159 -1235.922)" fill="#ee6352" opacity="0.48"/>
+  </g>
+</svg>
