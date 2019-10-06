@@ -1,11 +1,9 @@
 ::-webkit-scrollbar {
   width: 16px;
-  min-height: 16px;
-}
+  min-height: 16px; }
 
 ::-webkit-scrollbar-track {
-  background-color: #F4F1DE;
-}
+  background-color: #F4F1DE; }
 
 ::-webkit-scrollbar-thumb {
   width: 8px;
@@ -13,10 +11,8 @@
   background-color: rgba(238, 99, 82, 0.8);
   border: 3px solid transparent;
   background-clip: content-box;
-  border-radius: 8px;
-}
+  border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #EE6352; }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: #EE6352;
-}
 /*# sourceMappingURL=scrollbar.css.map */
