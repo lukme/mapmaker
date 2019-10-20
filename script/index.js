@@ -119,7 +119,7 @@ function copyTextChange() {
 }
 copyTextChange()
 
-// document.querySelector('.offer-elements-container').scrollLeft = ;
+document.querySelector('.offerOptions').scrollLeft = (360 - (0.47 * screen.width));
 
 // Choose footer option
 if (screenWidth > 1200) {

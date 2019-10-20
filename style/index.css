@@ -841,6 +841,8 @@ a {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap; }
+    .offer-container .offerOptions a {
+      margin: 0 10px; }
   .offer-container .standard, .offer-container .premium, .offer-container .pro {
     width: 200px;
     height: 300px; }
@@ -956,6 +958,14 @@ a {
     background-size: cover;
     height: 800px;
     max-height: 800px; }
+    .offer-container .offer-elements-container .offerOptions a {
+      margin: 0 10px; }
+    .offer-container .offer-elements-container .offerOptions a:nth-child(1) {
+      margin-left: 50px; }
+    .offer-container .offer-elements-container .offerOptions a:nth-child(3) {
+      margin-right: 50px; }
+    .offer-container .offer-elements-container .offerOptions::-webkit-scrollbar {
+      display: none; }
 
   .contact-container {
     background: #f4f1de url("/media/contactMob.svg") no-repeat center center;

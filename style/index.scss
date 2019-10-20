@@ -486,6 +486,9 @@ a {
       overflow-x: auto;
       overflow-y: hidden;
       white-space: nowrap;
+      a {
+        margin: 0 10px;
+      }
     }
     .standard, .premium, .pro {
       @include size(200px, 300px);
@@ -634,6 +637,20 @@ a {
     background-size: cover;
     height: 800px;
     max-height: 800px;
+    .offer-elements-container .offerOptions {
+      a {
+        margin: 0 10px;
+      }
+      a:nth-child(1) {
+        margin-left: 50px;
+      }
+      a:nth-child(3) {
+        margin-right: 50px;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
   .contact-container {
     background: $beige url("/media/contactMob.svg") no-repeat center center;
