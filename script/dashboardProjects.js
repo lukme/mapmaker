@@ -148,19 +148,6 @@ function appointDate() {
   }
 }
 
-
-// Add listeners to "DELETE" buttons in GOTten projects
-window.addEventListener('load', () => {
-  const deleteButtons = document.querySelectorAll('.project .remove');
-  for (let i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].addEventListener('click', initDelete);
-  };
-  if (projects.children[0].classList.contains('project')) {
-    adjustAddNewProjectMargin("0px", "80px", "0px", "60px", "0px", "50px");
-  }
-});
-// End add listeners to "DELETE" buttons in GOTten projects
-
 // Delete project
 let delProCount = 0;
 function initDelete() {
@@ -171,7 +158,7 @@ function initDelete() {
     }
   }
 
-  const parent = this.parentElement.parentElement;
+  let parent = this.parentElement.parentElement;
   document.querySelector('.delete-project-modal .submit-add').addEventListener('click', function () {
     if (parent) {
       parent.remove();
