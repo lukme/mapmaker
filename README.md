@@ -13,7 +13,7 @@ MapMaker.online is a web app that allows you to work with spatial data. This rep
 * HTML
 
 ## Status
-Project is still in progress.
+Finished.
 
 ## Contact
 Designed and developed by [Lucas Mecfal](mailto:lukme00@gmail.com). Please go ahead and contact me :) 
